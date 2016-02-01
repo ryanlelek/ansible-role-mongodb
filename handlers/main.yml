@@ -1,1 +1,7 @@
 ---
+
+- name: MongoDB Restart
+  service: name=mongod state=restarted enabled=yes
+
+- name: Update Package Cache
+  apt: update_cache=yes

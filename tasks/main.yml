@@ -1,1 +1,4 @@
 ---
+- include: mongodb.repository.tasks.yml
+- meta: flush_handlers
+- include: mongodb.tasks.yml

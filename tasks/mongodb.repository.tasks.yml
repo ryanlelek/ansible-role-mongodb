@@ -1,0 +1,13 @@
+---
+
+################################
+##### MongoDB Repositories #####
+################################
+
+- name: Add MongoDB Source Repository
+  apt_repository: repo='deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse' state=present update_cache=no
+  notify: Update Package Cache
+
+- name: Authorize the package signing key for MongoDB
+  apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x7F0CEB10 state=present
+  notify: Update Package Cache
